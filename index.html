@@ -13,30 +13,82 @@
 
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
+
     <title>BuzzQuizz</title>
+
 </head>
 
 <body>
 
-    <header>
+    <header class="header">
+
         <span>BuzzQuizz</span>
+
     </header>
 
-    <main>
+    <main class="main">
         <div class="yourQuizzes">
-            <div class="noQuizz">
+            <div class="noQuizz noDisplay">
                 <span>Você ainda não criou nenhum<br>quizz ainda :(</span>
 
                 <button class="createQuizz">Criar Quizz</button>
             </div>
-        </div>
-    </main>
+            <div class="quizzes">
+                <div class="addButton">
 
+                    <span>Seus Quizzes</span>
+                    <ion-icon name="add-circle"></ion-icon>
+
+                </div>
+                <article>
+                    <img src="/assets/img/simpsons.png">
+                    <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
+                </article>
+                <article>
+                    <img src="/assets/img/preguica.png">
+                    <span class="title">O quanto você é de boas?</span>
+                </article>
+            </div>
+        </div>
+
+        <div class="allQuizzes">
+
+            <span>Todos os Quizzes</span>
+
+            <article>
+                <img src="/assets/img/simpsons.png">
+                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
+            </article>
+            <article>
+                <img src="/assets/img/simpsons.png">
+                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
+            </article>
+            <article>
+                <img src="/assets/img/preguica.png">
+                <span class="title">O quanto você é de boas?</span>
+            </article>
+            <article>
+                <img src="/assets/img/preguica.png">
+                <span class="title">O quanto você é de boas?</span>
+            </article>
+            <article>
+                <img src="/assets/img/simpsons.png">
+                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
+            </article>
+            <article>
+                <img src="/assets/img/simpsons.png">
+                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
+            </article>
+
+        </div>
+
+    </main>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/script.js"></script>
+
 </body>
 
 </html>

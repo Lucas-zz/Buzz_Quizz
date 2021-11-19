@@ -7,7 +7,7 @@ body {
     background: #FAFAFA;
 }
 
-header {
+.header {
     width: 100%;
     height: 70px;
 
@@ -18,9 +18,13 @@ header {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     background: #EC362D;
+
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 
-header span {
+.header span {
     font-size: 37px;
     font-weight: 700;
 
@@ -29,8 +33,19 @@ header span {
     color: #fff;
 }
 
-main .noQuizz {
+.main {
+    width: 100%;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 70px;
+}
+
+
+
+.main .noQuizz {
     width: 340px;
     height: 180px;
 
@@ -39,7 +54,8 @@ main .noQuizz {
     justify-content: space-evenly;
     align-items: center;
 
-    margin: 20px;
+    margin-top: 30px;
+
 
     border: 1px dashed #d5d5d5;
     border-radius: 5px;
@@ -65,11 +81,84 @@ main .noQuizz {
     justify-content: center;
     align-items: center;
 
-    padding: 10px 25px;
+    padding: 8px 20px;
 
     border: 1px dashed #ec362d;
     border-radius: 50px;
 
-
+    font-size: 21px;
+    color: #ec362d;
     
+}
+
+.allQuizzes, .addButton {
+    margin-top: 30px;
+}
+
+.addButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+.addButton ion-icon {
+    font-size: 40px;
+    color: #ec362d;
+    cursor: pointer;
+
+    position: absolute;
+    right: 0;
+}
+
+.allQuizzes span:first-child, .addButton span {
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 23px;
+
+    align-items: left;
+}
+
+article {
+    width: 340px;
+    height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    margin: 15px 0;
+
+    position: relative;
+}
+
+article img {
+
+    position: absolute;
+    bottom: 0;
+
+    border-radius: 5px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+
+}
+
+article .title {
+    font-size: 19px;
+    font-weight: 300;
+
+    line-height: 22px;
+
+    margin: 20px;
+    
+    color: #fff;
+
+    position: absolute;
+    z-index: 2;
+}
+
+.main .noDisplay {
+    display: none;
 }
