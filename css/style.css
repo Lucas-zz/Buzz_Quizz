@@ -159,6 +159,10 @@ article .title {
     z-index: 2;
 }
 
+
+
 .main .noDisplay {
+    transition: 1000ms;
     display: none;
 }
+
