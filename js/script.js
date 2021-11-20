@@ -18,7 +18,7 @@ function listQuizzes() {
                 <article onclick="insideQuizz(this)">
                 <img src="${data[i].image}">
                 <span class="title">${data[i].title}</span>
-                <div id="gradient"></div>
+                <div class="gradient"></div>
                 </article>
                 `
         }

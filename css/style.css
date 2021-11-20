@@ -35,7 +35,7 @@ body {
 
 
 
-.main1 {
+.listQuizz {
     width: 1050px;
 
     margin: auto;
@@ -178,21 +178,22 @@ article img {
     position: absolute;
 }
 
-#gradient {
+.gradient {
     width: 100%;
     height: 100%;
 
     position: absolute;
+    z-index: 3;
 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.1) 64.58%, #000000 100%);
     
     transition: all 1s;
 }
 
-#gradient:hover{
+article .gradient:hover /*+ article img*/{
     transform: scale(2);
 }
 
@@ -207,16 +208,75 @@ article .title {
     color: #fff;
     
     position: absolute;
-    z-index: 2;
+    z-index: 4;
 
+    text-shadow: 1px 1px 3px #000;
+}
+
+.insideQuiz {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.insideHeader{
+    width: 100%;
+    height: 297px;
+    padding-top: 70px;
+
+    position: relative;
+}
+
+.insideHeader img {
+    width: 100%;
+    height: 227px;
+
+    object-fit: cover;
+
+    position: absolute;
+}
+
+.opacity {
+    width: 100%;
+    height: 227px;
+
+    opacity: 40%;
+
+    background: #000;
+
+    position: absolute;
+    z-index: 2;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insideTitle {
+    font-size: 39px;
+    font-weight: 400;
+    
+    line-height: 46px;
+    
+    color: #fff;
+    
+    position: absolute;
+    bottom: 30%;
+    z-index: 3;
+    
     text-shadow: 1px 1px 3px #000;
 }
 
 
 
+
+
 @media (max-width: 1100px) {
 
-    .main1 {
+    .listQuizz {
         width: 100%;
 
         display: flex;

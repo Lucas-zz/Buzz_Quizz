@@ -24,7 +24,7 @@
         <span>BuzzQuizz</span>
     </header>
 
-    <main class="main1">
+    <main class="listQuizz">
         <div>
             <div class="noQuizz noDisplay">
                 <span>Você ainda não criou nenhum<br>quizz ainda :(</span>
@@ -40,19 +40,19 @@
                 <div class="yourQuizzes">
 
                     <article onclick="insideQuizz(this)">
+                        <div class="gradient"></div>
                         <img src="/assets/img/ferias.png">
                         <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
-                        <div id="gradient"></div>
                     </article>
                     <article onclick="insideQuizz(this)">
+                        <div class="gradient"></div>
                         <img src="/assets/img/hogwarts.png">
                         <span class="title">O quão Potterhead você é?</span>
-                        <div id="gradient"></div>
                     </article>
                     <article onclick="insideQuizz(this)">
+                        <div class="gradient"></div>
                         <img src="/assets/img/ferias.png">
                         <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
-                        <div id="gradient"></div>
                     </article>
                 </div>
             </div>
@@ -67,10 +67,13 @@
 
     </main>
 
-    <main class="insideQuizz">
-        <div class="insideImage">
-            <img src="" alt="">
-            <span class="insideTitle"></span>
+    <main class="insideQuizz noDisplay">
+        <div class="insideHeader">
+            <div class="opacity"></div>
+            <img src="/assets/img/hogwarts.png">
+            <div class="center">
+                <span class="insideTitle">O quão Potterhead é você?</span>
+            </div>
         </div>
     </main>
 
