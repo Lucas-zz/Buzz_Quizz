@@ -33,30 +33,31 @@ body {
     color: #fff;
 }
 
-.main {
-    width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
+.main1 {
+    width: 1050px;
+
+    margin: auto;
+    
     padding-top: 70px;
 }
 
 
 
-.main .noQuizz {
-    width: 340px;
+.noQuizz {
+    width: 100%;
     height: 180px;
 
+    margin: auto;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
+    
     margin-top: 30px;
-
-
+    
     border: 1px dashed #d5d5d5;
     border-radius: 5px;
 }
@@ -66,9 +67,9 @@ body {
     font-weight: 400px;
 
     line-height: 23px;
-
+    
     text-align: center;
-
+    
     color: #b9b9b9;
 }
 
@@ -80,27 +81,41 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     padding: 8px 20px;
-
+    
     border: 1px dashed #ec362d;
     border-radius: 50px;
-
+    
     font-size: 21px;
     color: #ec362d;
     
 }
 
-.allQuizzes, .addButton {
-    margin-top: 30px;
+.yours {
+    margin-top: 68px;
 }
 
+.all {
+
+        font-size: 20px;
+        font-weight: 700;
+
+        line-height: 23px;
+
+        margin: 48px 0 15px 0;
+    }
+
 .addButton {
+
+    margin-bottom: 15px;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
 
     position: relative;
+
 }
 
 .addButton ion-icon {
@@ -109,60 +124,177 @@ body {
     cursor: pointer;
 
     position: absolute;
-    right: 0;
+    left: 135px;
+
+}
+
+.allQuizzes, .yourQuizzes {
+
+    margin: auto;
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    flex-wrap: wrap;
+    justify-content: left;
+    
+    gap: 15px;
 }
 
 .allQuizzes span:first-child, .addButton span {
     font-size: 20px;
     font-weight: 700;
-
+    
     line-height: 23px;
-
+    
     align-items: left;
 }
 
 article {
     width: 340px;
     height: 180px;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: end;
-
-    margin: 15px 0;
+    
+    border-radius: 5px;
+    
+    overflow: hidden;
 
     position: relative;
 }
 
 article img {
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 5px;
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    
+    position: absolute;
+}
+
+#gradient {
+    width: 100%;
+    height: 100%;
 
     position: absolute;
-    bottom: 0;
 
-    border-radius: 5px;
-
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 64.58%, #000000 100%);
+    
+    transition: all 1s;
+}
 
+#gradient:hover{
+    transform: scale(2);
 }
 
 article .title {
     font-size: 19px;
     font-weight: 300;
-
+    
     line-height: 22px;
-
+    
     margin: 20px;
     
     color: #fff;
-
+    
     position: absolute;
     z-index: 2;
+
+    text-shadow: 1px 1px 3px #000;
 }
 
 
 
-.main .noDisplay {
-    transition: 1000ms;
+@media (max-width: 1100px) {
+
+    .main1 {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .noQuizz {
+        width: 340px;
+    }
+
+    .noQuizz span {
+        font-size: 20px;
+        font-weight: 400px;
+
+        line-height: 23px;
+
+        text-align: center;
+
+        color: #b9b9b9;
+    }
+
+    .noQuizz button {
+        all: unset;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 8px 20px;
+
+        border: 1px dashed #ec362d;
+        border-radius: 50px;
+
+        font-size: 21px;
+        color: #ec362d;
+    }
+
+    .yours {
+        width: 340px;
+        
+        margin-top: 38px;
+    }
+
+    .all {
+        font-size: 20px;
+        font-weight: 700;
+
+        line-height: 23px;
+
+        margin: 30px 0 15px 0;
+    }
+
+    .addButton ion-icon {
+        left: auto;
+        right: 0;
+    }
+
+    .allQuizzes span:first-child, .addButton span {
+        font-size: 20px;
+        font-weight: 700;
+
+        line-height: 23px;
+    }
+
+    .allQuizzes, .yourQuizzes {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 15px;
+    }
+}
+
+.noDisplay {
     display: none;
 }
-

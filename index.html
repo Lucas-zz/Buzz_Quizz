@@ -21,73 +21,63 @@
 <body>
 
     <header class="header">
-
         <span>BuzzQuizz</span>
-
     </header>
 
-    <main class="main">
-        <div class="yourQuizzes">
-            <div class="noQuizz ">
+    <main class="main1">
+        <div>
+            <div class="noQuizz noDisplay">
                 <span>Você ainda não criou nenhum<br>quizz ainda :(</span>
-
-                <button class="createQuizz">Criar Quizz</button>
+                <button class="createQuizz" onclick="createQuizz()">Criar Quizz</button>
             </div>
-            <div class="quizzes noDisplay">
+            <div class="yours ">
                 <div class="addButton">
 
                     <span>Seus Quizzes</span>
-                    <ion-icon name="add-circle"></ion-icon>
+                    <ion-icon name="add-circle" onclick="createQuizz()"></ion-icon>
 
                 </div>
-                <article>
-                    <img src="/assets/img/hogwarts.png">
-                    <span class="title">O quão Potterhead você é?</span>
-                </article>
-                <article>
-                    <img src="/assets/img/ferias.png">
-                    <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
-                </article>
+                <div class="yourQuizzes">
+
+                    <article onclick="insideQuizz(this)">
+                        <img src="/assets/img/ferias.png">
+                        <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
+                        <div id="gradient"></div>
+                    </article>
+                    <article onclick="insideQuizz(this)">
+                        <img src="/assets/img/hogwarts.png">
+                        <span class="title">O quão Potterhead você é?</span>
+                        <div id="gradient"></div>
+                    </article>
+                    <article onclick="insideQuizz(this)">
+                        <img src="/assets/img/ferias.png">
+                        <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
+                        <div id="gradient"></div>
+                    </article>
+                </div>
+            </div>
+            <div class="all">
+                <span>Todos os Quizzes</span>
             </div>
         </div>
 
         <div class="allQuizzes">
 
-            <span>Todos os Quizzes</span>
-
-            <article>
-                <img src="/assets/img/simpsons.png">
-                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
-            </article>
-            <article>
-                <img src="/assets/img/simpsons.png">
-                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
-            </article>
-            <article>
-                <img src="/assets/img/preguica.png">
-                <span class="title">O quanto você é de boas?</span>
-            </article>
-            <article>
-                <img src="/assets/img/preguica.png">
-                <span class="title">O quanto você é de boas?</span>
-            </article>
-            <article>
-                <img src="/assets/img/simpsons.png">
-                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
-            </article>
-            <article>
-                <img src="/assets/img/simpsons.png">
-                <span class="title">Acerte os personagens corretos dos Simpsons e prove seu amor!</span>
-            </article>
-
         </div>
 
+    </main>
+
+    <main class="insideQuizz">
+        <div class="insideImage">
+            <img src="" alt="">
+            <span class="insideTitle"></span>
+        </div>
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./scripts/script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
 
