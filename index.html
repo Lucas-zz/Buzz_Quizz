@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <link rel="shortcut icon" href="./assets/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -28,32 +28,33 @@
         <div>
             <div class="noQuizz noDisplay">
                 <span>Você ainda não criou nenhum<br>quizz ainda :(</span>
-                <button class="createQuizz" onclick="createQuizz()">Criar Quizz</button>
+                <button class="createQuizz" data-identifier="create-quizz" onclick="createQuizz()">Criar Quizz</button>
             </div>
-            <div class="yours ">
+            <div class="yours">
                 <div class="addButton">
 
                     <span>Seus Quizzes</span>
-                    <ion-icon name="add-circle" onclick="createQuizz()"></ion-icon>
+                    <ion-icon name="add-circle" data-identifier="create-quizz" onclick="createQuizz()"></ion-icon>
 
                 </div>
                 <div class="yourQuizzes">
 
-                    <article onclick="insideQuizz(this)">
+                    <article onclick="insideQuizz(this)" data-identifier="quizz-card">
                         <div class="gradient"></div>
                         <img src="./assets/img/ferias.png">
                         <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
                     </article>
-                    <article onclick="insideQuizz(this)">
+                    <article onclick="insideQuizz(this)" data-identifier="quizz-card">
                         <div class="gradient"></div>
                         <img src="./assets/img/hogwarts.png">
                         <span class="title">O quão Potterhead você é?</span>
                     </article>
-                    <article onclick="insideQuizz(this)">
+                    <article onclick="insideQuizz(this)" data-identifier="quizz-card">
                         <div class="gradient"></div>
                         <img src="./assets/img/ferias.png">
                         <span class="title">É ex-BBB ou ex-De férias com o Ex?</span>
                     </article>
+
                 </div>
             </div>
             <div class="all">
@@ -78,10 +79,10 @@
 
         <section class="container">
             <article class="margin">
-                <div class="question">
+                <div class="question" data-identifier="question">
                     <span>Em qual animal Olho-Tonto Moody transformou Malfoy?</span>
                 </div>
-                <div class="answers">
+                <div class="answers" data-identifier="answer">
                     <div class="answer">
                         <img src="./assets/img/gatineo.png">
                         <span>Gatíneo</span>
@@ -103,10 +104,10 @@
         </section>
         <section class="container">
             <article class="margin">
-                <div class="question">
+                <div class="question" data-identifier="question">
                     <span>Qual dos objetos abaixo NÃO é uma horcrux?</span>
                 </div>
-                <div class="answers">
+                <div class="answers" data-identifier="answer">
                     <div class="answer">
                         <img src="./assets/img/harry.png">
                         <span>The boy who lived</span>
@@ -126,7 +127,7 @@
                 </div>
             </article>
         </section>
-        <section class="container">
+        <section class="container" data-identifier="quizz-result">
             <article class="margin">
                 <div class="result1">
                     <span>88% de acerto: Você é praticamente um aluno de Hogwarts!</span>
