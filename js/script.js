@@ -7,8 +7,8 @@ function listQuizzes() {
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
 
     promise.then((response) => {
-        console.log(response.data);
         data = response.data;
+        console.log(data);
 
         const quizz = document.querySelector(".allQuizzes");
 
@@ -33,13 +33,12 @@ function insideQuizz(id) {
 
     quizzId = id;
 
-    let questions = [];
+    let answers = [];
     let levels = [];
 
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
 
     promise.then((response) => {
-        console.log(response.data);
         quizzData = response.data;
 
         const main = document.querySelector(".listQuizz");
@@ -59,23 +58,57 @@ function insideQuizz(id) {
                 </div>
             </div>
         `
+
         let questData = quizzData.questions;
-        console.log(questData.length)
 
         for (let i = 0; i < questData.length; i++) {
 
             quizz.innerHTML += `
             <section class="container">
-                <article class="margin">
-                    <div class="question" data-identifier="question">
-                        <span>${questData[i].title}</span>
-                    </div>
-                </article>
+                    <article class="margin">
+                        <div class="question q${i}" data-identifier="question">
+                                <span>${questData[i].title}</span>
+                        </div>
+                        <div class="answers a${i}" data-identifier="answer">
+                            
+                        </div>
+                    </article>
             </section>
             `
-            const quest = quizz.querySelector(".question");
-            quest.style.backgroundColor = questData[i].color;
+
+
+            let ansData = quizzData.questions[i].answers;
+            console.log(ansData);
+            for (let a = 0; a < ansData.length; a++) {
+                answers.push(ansData[a]);
+            }
+
+            answers = answers.sort(() => Math.random() - 0.5);
+            console.log(answers);
+            let ansQuest = quizz.querySelector(`.a${i}`);
+
+
+            for (let j = 0; j < answers.length; j++) {
+                ansQuest.innerHTML += `
+                <div class="answer" onclick="answers(this)>
+                    <img src='${answers[j].image}'>
+                    <span>${answers[j].text}</span>
+                </div>
+                `
+            }
+            console.log(ansQuest);
+
+            answers = [];
+
+            // const quest = quizz.querySelector(`.question .q${i}`);
+            // console.log(quizz);
+            // console.log(questData[i].color);
+
+            // quizz.querySelector(`.question .q${i}`).style.backgroundColor = questData[i].color;
+
         }
+
+
 
 
 

@@ -26,11 +26,11 @@
 
     <main class="listQuizz">
         <div>
-            <div class="noQuizz noDisplay">
+            <div class="noQuizz">
                 <span>Você ainda não criou nenhum<br>quizz ainda :(</span>
                 <button class="createQuizz" data-identifier="create-quizz" onclick="createQuizz()">Criar Quizz</button>
             </div>
-            <div class="yours">
+            <div class="yours noDisplay">
                 <div class="addButton">
 
                     <span>Seus Quizzes</span>
@@ -87,7 +87,7 @@
                         <img src="./assets/img/gatineo.png">
                         <span>Gatíneo</span>
                     </div>
-                    <div class="answer">
+                    <div class="answer" onclick="answers(this)">
                         <img src="./assets/img/ratata.png">
                         <span>Ratata</span>
                     </div>

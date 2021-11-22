@@ -90,6 +90,14 @@ button {
 
   font-size: 21px;
   color: #ec362d;
+
+  transition: all 0.5s;
+}
+
+.noQuizz button:hover{
+  background-color: #ec362d;
+  border: 1px dashed #fff;
+  color: #fff;
 }
 
 .yours {
@@ -310,6 +318,8 @@ article .title {
   font-size: 23px;
   font-weight: 700;
 
+  text-align: center;
+
   line-height: 27px;
 
   color: #fff;
@@ -482,6 +492,8 @@ article .title {
 
     font-size: 21px;
     color: #ec362d;
+
+    transition: all 0.5s;
   }
 
   .yours {
@@ -571,19 +583,21 @@ article .title {
 
     background: #434ca0;
 
-    text-align: center;
-
     display: flex;
     justify-content: center;
     align-items: center;
-  }
 
+    overflow: hidden;
+  }
+  
   .question span {
     font-size: 19px;
     font-weight: 700;
-
+    
+    text-align: center;
+    
     line-height: 22px;
-
+    
     color: #fff;
   }
 
