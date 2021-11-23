@@ -73,20 +73,31 @@
 
     </main>
 
-    <main class="creating-quizz">
-        <div class="start noDisplay">
-            <span class="title">Comece pelo começo</span>
+    <main class="creating-quizz noDisplay">
+      <div class="start">
+        <span class="title">Comece pelo começo</span>
 
-            <div class="create-questions noDisplay">
-                <span class="title">Crie suas perguntas</span>
+        <input class="quizz-title" placeholder="Título do seu quizz" />
+        <input class="quizz-image" placeholder="URL da imagem do seu quizz" />
+        <input
+          class="amount-questions"
+          placeholder="Quantidade de perguntas do quizz"
+        />
+        <input
+          class="amount-levels"
+          placeholder="Quantidade de níveis do quizz"
+        />
 
-                <div class="content">
-                    <span class="title">Pergunta 1</span>
+        <button onclick="makeQuestions()">
+          Prosseguir pra criar perguntas
+        </button>
+      </div>
 
                     <input placeholder="Texto da pergunta" />
                     <input placeholder="Cor de fundo da pergunta" />
 
-                    <span class="title">Resposta correta</span>
+        <!-- <div class="questions">
+          <span class="title">Pergunta 1</span>
 
                     <input placeholder="Resposta correta" />
                     <input placeholder="URL da imagem" />
@@ -117,11 +128,16 @@
                     <ion-icon name="duplicate-outline"></ion-icon>
                 </div>
 
-                <button>Prosseguir pra criar níveis</button>
-            </div>
+        <div class="add-question">
+          <span class="text">Pergunta 2</span>
+          <ion-icon name="duplicate-outline"></ion-icon>
+        </div>
 
-            <div class="select-level noDisplay">
-                <span class="title">Agora, decida os níveis!</span>
+        <div class="add-question">
+          <span class="text">Pergunta 3</span>
+          <ion-icon name="duplicate-outline"></ion-icon>
+        </div> -->
+      </div>
 
                 <div class="content">
                     <span class="title">Nível 1</span>
@@ -142,11 +158,16 @@
                     <ion-icon name="duplicate-outline"></ion-icon>
                 </div>
 
-                <button>Finalizar Quizz</button>
-            </div>
+        <div class="add-question">
+          <span class="text">Nível 3</span>
+          <ion-icon name="duplicate-outline"></ion-icon>
+        </div>
 
-            <div class="ending">
-                <span class="title">Seu quizz está pronto!</span>
+        <button onclick="ending()">Finalizar Quizz</button>
+      </div>
+
+      <div class="ending noDisplay">
+        <span class="title">Seu quizz está pronto!</span>
 
                 <button>Acessar Quizz</button>
                 <button>Voltar pra home</button>
@@ -244,6 +265,9 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script src="/js/pages.js"></script>
+    <script src="/js/creatingQuizz.js"></script>
     <script src="js/script.js"></script>
 
 </body>
