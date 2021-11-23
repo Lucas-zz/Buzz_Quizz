@@ -196,13 +196,6 @@ function nextQuestion(currentNode) {
     }
 }
 
-
-
-
-
-
-
-
 // function nextQuestion(currentNode) {
 //     const questions = document.querySelectorAll(".container");
 //     let position = 0;
