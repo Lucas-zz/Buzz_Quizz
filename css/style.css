@@ -755,5 +755,5 @@ img {
 }
 
 .noDisplay {
-  display: none;
+  display: none !important;
 }
