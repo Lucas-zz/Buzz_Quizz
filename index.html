@@ -25,9 +25,9 @@
       <span>BuzzQuizz</span>
     </header>
 
-    <main class="listQuizz noDisplay">
+    <main class="listQuizz">
       <div>
-        <div class="noQuizz noDisplay">
+        <div class="noQuizz">
           <span>Você ainda não criou nenhum<br />quizz ainda :(</span>
           <button
             class="createQuizz"
@@ -155,16 +155,24 @@
       </div>
     </main>
 
-    <main class="creating-quizz">
-      <div class="start noDisplay">
+    <main class="creating-quizz noDisplay">
+      <div class="start">
         <span class="title">Comece pelo começo</span>
 
-        <input placeholder="Título do seu quizz" />
-        <input placeholder="URL da imagem do seu quizz" />
-        <input placeholder="Quantidade de perguntas do quizz" />
-        <input placeholder="Quantidade de níveis do quizz" />
+        <input class="quizz-title" placeholder="Título do seu quizz" />
+        <input class="quizz-image" placeholder="URL da imagem do seu quizz" />
+        <input
+          class="amount-questions"
+          placeholder="Quantidade de perguntas do quizz"
+        />
+        <input
+          class="amount-levels"
+          placeholder="Quantidade de níveis do quizz"
+        />
 
-        <button>Prosseguir pra criar perguntas</button>
+        <button onclick="makeQuestions()">
+          Prosseguir pra criar perguntas
+        </button>
       </div>
 
       <div class="create-questions noDisplay">
@@ -207,7 +215,7 @@
           <ion-icon name="duplicate-outline"></ion-icon>
         </div>
 
-        <button>Prosseguir pra criar níveis</button>
+        <button onclick="selectLevel()">Prosseguir pra criar níveis</button>
       </div>
 
       <div class="select-level noDisplay">
@@ -232,10 +240,10 @@
           <ion-icon name="duplicate-outline"></ion-icon>
         </div>
 
-        <button>Finalizar Quizz</button>
+        <button onclick="ending()">Finalizar Quizz</button>
       </div>
 
-      <div class="ending">
+      <div class="ending noDisplay">
         <span class="title">Seu quizz está pronto!</span>
 
         <button>Acessar Quizz</button>
