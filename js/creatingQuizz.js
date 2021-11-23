@@ -49,7 +49,6 @@ const makeQuestions = () => {
       }
     }
   }
-  nextPage = true;
 
   if (nextPage) {
     start.setAttribute("class", "noDisplay");
