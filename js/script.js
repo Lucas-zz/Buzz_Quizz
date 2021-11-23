@@ -19,6 +19,7 @@ function listQuizzes() {
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
 
     promise.then((response) => {
+
         data = response.data;
         console.log(data);
 
@@ -50,6 +51,12 @@ function insideQuizz(id) {
 
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
 
+    promise.catch((response) => {
+        alert(`
+    Status Code: ${response.status}
+    Mensagem: ${response.data}
+        `)
+    });
     promise.then((response) => {
 
         window.scrollTo(0, 0);
@@ -105,15 +112,17 @@ function insideQuizz(id) {
                 `
                 const isCorrectAnswer = ansQuest.querySelector(`.answer.aa${j}`);
                 isCorrectAnswer.classList.add(`${answers[j].isCorrectAnswer}`)
-                console.log(answers[j]);
             }
+
             answers = [];
 
-            // const quest = quizz.querySelector(`.question .q${i}`);
-            // console.log(quizz);
-            // console.log(questData[i].color);
+            let quest = quizz.querySelector(`.question.q${i}`);
 
-            // quizz.querySelector(`.question .q${i}`).style.backgroundColor = questData[i].color;
+            if (questData[i].color === '#fff' || '#ffffff' || 'rgb(255, 255, 255)') {
+                quest.style.backgroundColor = '#434CA0';
+            } else {
+                quest.style.backgroundColor = questData[i].color;
+            }
         }
 
         quizz.innerHTML += `
@@ -142,22 +151,22 @@ function insideQuizz(id) {
 }
 
 function clickAnswer(answer) {
-    console.log(answer);
 
     const parent = answer.parentNode;
     const children = parent.children;
-    const parentParent = parent.parentNode;
+    const parentParent = parent.parentNode.parentNode;
 
     parent.classList.add("selected");
 
     for (let i = 0; i < children.length; i++) {
         children[i].classList.add("notSelected");
-        // children[i].removeAtribute("onclick");
+        children[i].removeAttribute("onclick");
     }
 
     if (answer.classList.contains("true")) {
         qtCorrectAnswers++;
     }
+
     answer.classList.remove("notSelected");
     qtAnswered++;
 
@@ -166,7 +175,7 @@ function clickAnswer(answer) {
         finalResult(percentage);
     }
 
-    // setTimeout(nextQuestion, 2000, parentParent);
+    setTimeout(nextQuestion, 2000, parentParent);
 
 }
 
@@ -177,6 +186,22 @@ function finalResult(percentage) {
     const titleResult = endQuizz.querySelector(".result1 span");
     titleResult.innerHTML = `${percentage}% de acerto: ${quizzData.levels[0].title}`;
 }
+
+function nextQuestion(currentNode) {
+
+    let container = currentNode.nextElementSibling;
+
+    if (container !== currentNode.classList.contains("result")) {
+        container.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+}
+
+
+
+
+
+
+
 
 // function nextQuestion(currentNode) {
 //     const questions = document.querySelectorAll(".container");

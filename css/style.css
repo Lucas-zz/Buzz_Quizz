@@ -319,7 +319,11 @@ article .title {
   font-size: 23px;
   font-weight: 700;
 
+  overflow: hidden;
+  overflow-wrap: break-word;
+
   text-align: center;
+  text-shadow: 1px 1px 1px #000;
 
   line-height: 27px;
 
@@ -332,6 +336,9 @@ article .title {
 
   background: #ec362d;
 
+  overflow: hidden;
+  overflow-wrap: break-word;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -341,11 +348,10 @@ article .title {
   font-size: 23px;
   font-weight: 700;
 
-  text-align: center;
-
   overflow: hidden;
   overflow-wrap: break-word;
-
+  
+  text-align: center;
   line-height: 27px;
 
   color: #fff;
@@ -416,15 +422,14 @@ article .title {
   font-size: 20px;
   font-weight: 700;
 
-  line-height: 23px;
-
+  overflow: hidden;
+  overflow-wrap: break-word;
+  
   text-align: left;
-
+  line-height: 23px;
   margin-top: 10px;
 
   color: #000000;
-
-  overflow: hidden;
 }
 
 .selected > .answer.true span  {
