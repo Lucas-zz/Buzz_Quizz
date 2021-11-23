@@ -118,7 +118,7 @@ function insideQuizz(id) {
 
             let quest = quizz.querySelector(`.question.q${i}`);
 
-            if (questData[i].color === '#fff' || '#ffffff' || 'rgb(255, 255, 255)') {
+            if (questData[i].color === '#fff' || questData[i].color === '#ffffff' || questData[i].color === 'rgb(255, 255, 255)') {
                 quest.style.backgroundColor = '#434CA0';
             } else {
                 quest.style.backgroundColor = questData[i].color;
@@ -195,29 +195,6 @@ function nextQuestion(currentNode) {
         container.scrollIntoView({ behavior: "smooth", block: "center" });
     }
 }
-
-// function nextQuestion(currentNode) {
-//     const questions = document.querySelectorAll(".container");
-//     let position = 0;
-//     let scroll = false;
-
-//     window.addEventListener('scroll', (e) => {
-//         scroll = true;
-//     })
-
-//     for (let i = 0; i < questions.length; i++) {
-//         if (questions[i] === currentNode) {
-//             position++;
-//         }
-//     }
-
-//     if ((position + 1) < questions.length && !scroll) {
-//         questions[position + 1].scrollIntoView({ behavior: "smooth", block: "center" });
-
-//     } else if (!scroll) {
-//         document.querySelector(".container .result").scrollIntoView({ behavior: "smooth", block: "center" });
-//     }
-// }
 
 function restart(quizzId) {
 

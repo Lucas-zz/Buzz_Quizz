@@ -5,6 +5,7 @@
 
 body {
   background: #fafafa;
+  scroll-behavior: smooth;
 }
 
 button {
@@ -272,6 +273,7 @@ article .title {
   font-size: 39px;
   font-weight: 400;
 
+  text-align: center;
   line-height: 46px;
 
   color: #fff;
