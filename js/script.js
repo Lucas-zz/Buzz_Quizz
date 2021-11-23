@@ -2,8 +2,11 @@ let data = [];
 let quizzData = [];
 let quizzId;
 
-function listQuizzes() {
+const main = document.querySelector(".listQuizz");
+const quizz = document.querySelector(".insideQuizz");
 
+function listQuizzes() {
+    quizzId = 0;
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes');
 
     promise.then((response) => {
@@ -36,19 +39,19 @@ function insideQuizz(id) {
     let answers = [];
     let levels = [];
 
+    let qtAnswers = 0;
+    let qtQuestions = 0;
+
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/' + id);
 
     promise.then((response) => {
-        quizzData = response.data;
 
-        const main = document.querySelector(".listQuizz");
+        window.scrollTo(0, 0);
         main.classList.add("noDisplay")
-
-        const quizz = document.querySelector(".insideQuizz");
         quizz.classList.remove("noDisplay");
 
+        quizzData = response.data;
         quizz.innerHTML = '';
-
         quizz.innerHTML = `
             <div class="insideHeader">
                 <div class="opacity"></div>
@@ -60,8 +63,9 @@ function insideQuizz(id) {
         `
 
         let questData = quizzData.questions;
-
         for (let i = 0; i < questData.length; i++) {
+
+            qtQuestions++;
 
             quizz.innerHTML += `
             <section class="container">
@@ -76,28 +80,21 @@ function insideQuizz(id) {
             </section>
             `
 
-
             let ansData = quizzData.questions[i].answers;
-            console.log(ansData);
             for (let a = 0; a < ansData.length; a++) {
                 answers.push(ansData[a]);
             }
-
             answers = answers.sort(() => Math.random() - 0.5);
-            console.log(answers);
+
             let ansQuest = quizz.querySelector(`.a${i}`);
-
-
             for (let j = 0; j < answers.length; j++) {
                 ansQuest.innerHTML += `
-                <div class="answer" onclick="answers(this)>
+                <div class="answer">
                     <img src='${answers[j].image}'>
                     <span>${answers[j].text}</span>
                 </div>
                 `
             }
-            console.log(ansQuest);
-
             answers = [];
 
             // const quest = quizz.querySelector(`.question .q${i}`);
@@ -108,23 +105,25 @@ function insideQuizz(id) {
 
         }
 
-
-
-
-
+        quizz.innerHTML += `
+            <div div class="insideButtons" >
+                <button class="restart" onclick="restart(quizzId)">Reiniciar Quizz</button>
+                <button class="backHome" onclick="resetMain()">Voltar para Home</button>
+            </div >
+        `
     })
 }
 
-// function insideQuizz() {
-//     const main1 = document.querySelector(".main1");
-//     const main2 = document.querySelector(".main2");
+function restart(quizzId) {
+    window.scrollTo(0, 0);
+    insideQuizz(quizzId);
+}
 
-//     main1.classList.add("noDisplay");
-//     main2.classList.remove("noDisplay");
-
-
-
-// }
+function resetMain() {
+    window.scrollTo(0, 0);
+    main.classList.toggle("noDisplay")
+    quizz.classList.toggle("noDisplay");
+}
 
 listQuizzes();
 
